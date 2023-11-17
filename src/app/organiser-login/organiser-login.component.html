@@ -1,0 +1,23 @@
+<form (ngSubmit) = "onLoginSubmit()">
+    <div class="container">
+      <h1>Organiser Login</h1>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" [(ngModel)]="email" name="email" id="email">
+  
+      <label for="password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" [(ngModel)]="password" name="password" id="password" >
+  
+      <hr>
+  
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    <div class="container signin">
+      <!-- <p>Already have an account? <a [routerLink] = "['/organiser/resgister']">Sign in</a>.</p> -->
+      <p>Already have an account? <a [routerLink] = "['/organiser/register']">Sign in</a>.</p>
+    </div>
+    
+  </form>
