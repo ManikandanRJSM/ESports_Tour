@@ -1,7 +1,9 @@
 <div class="header">
     <a [routerLink] = "['/']" class="logo">{{title}}</a>
     <div class="header-right">
-      <a class="" [routerLink] = "['/organiser/login']">Organiser</a>&nbsp;&nbsp;
-      <a class="" [routerLink] = "['/player/login']">Player</a>
+      <a routerLinkActive="active" [routerLink] = "['games']">Play</a>
+      <a routerLinkActive="active" [routerLink] = "['/organiser/login']">Organise</a>
+      <a routerLinkActive="active" [routerLink] = "['/player/login']">Login</a>
+      
     </div>
   </div>

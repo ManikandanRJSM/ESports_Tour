@@ -15,9 +15,11 @@ import { PlayerDashboardComponent } from './player-dashboard/player-dashboard.co
 import { OrganiserDashboardComponent } from './organiser-dashboard/organiser-dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { application } from 'express';
+import { GamesComponent } from './games/games.component';
 
 const appRoutes: Routes = [
   {path : '', component : HomeComponent},
+  {path : 'games', component : GamesComponent},
   {path : 'organiser/register', component : OrganiserRegisterComponent},
   {path : 'organiser/login', component : OrganiserLoginComponent},
   {path : 'player/login', component : PlayerLoginComponent},
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     PlayerLoginComponent,
     PlayerDashboardComponent,
     OrganiserDashboardComponent,
-    HomeComponent
+    HomeComponent,
+    GamesComponent
   ],
   imports: [
     BrowserModule,
