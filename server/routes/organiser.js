@@ -4,9 +4,9 @@ const { login, register } = require('../controllers/organiser/TokenAuth')
 const route = express.Router()
 
 
-route.get('/login', login)
+route.post('/login', login)
 
 
-route.get('/register', register)
+route.post('/register', register)
 
 module.exports = route
