@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('organiser/register', 'TokenAuthController@register');
+Route::get('getCountries', 'HomeController@getCountries');

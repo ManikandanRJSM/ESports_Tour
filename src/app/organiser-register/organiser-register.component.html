@@ -10,7 +10,12 @@
       <input type="text" placeholder="Enter Last Name" [(ngModel)]="last_name" name="last_name" id="last_name">
 
       <label for="country"><b>Country</b></label>
-      <input type="text" placeholder="Enter Country" [(ngModel)]="country" name="country" id="country">
+      <select name="country" [(ngModel)]="country">
+        <option *ngFor="let country of countryData" value="{{country.id}}">
+          {{country.name}}
+        </option>
+      </select>
+      <!-- <input type="text" placeholder="Enter Country" [(ngModel)]="country" name="country" id="country"> -->
 
       <label for="organization"><b>Organization</b></label>
       <input type="text" [(ngModel)]="organization" name="organization" id="organization">

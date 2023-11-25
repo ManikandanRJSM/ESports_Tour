@@ -9,4 +9,12 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
+
+
+  registerOrganiser(formData: any){
+    let headers = new HttpHeaders()
+    headers.append('Content-Type', 'application/json')
+
+    return this.http.post('http://localhost:8000/api/organiser/register', formData, {headers : headers})
+  }
 }
