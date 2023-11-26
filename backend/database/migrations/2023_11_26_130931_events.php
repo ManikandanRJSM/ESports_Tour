@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('g_id')->unique()->unsigned();
+            $table->integer('g_id')->unsigned();
             $table->foreign('g_id')->references('id')->on('games');
             $table->integer('country_id')->unique()->unsigned();
             $table->foreign('country_id')->references('id')->on('country');

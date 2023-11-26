@@ -24,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('organiser/register', 'TokenAuthController@register');
 Route::post('organiser/login', 'TokenAuthController@login');
 Route::get('getCountries', 'HomeController@getCountries');
+
+Route::get('playGames', 'GameController@playGames');
