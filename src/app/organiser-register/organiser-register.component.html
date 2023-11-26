@@ -3,6 +3,8 @@
       <h1>Organiser Registration</h1>
       <hr>
 
+      <div *ngIf="isRegistered">{{messageString}}</div>
+
       <label for="first_name"><b>First Name</b></label>
       <input type="text" placeholder="Enter First Name" [(ngModel)]="first_name" name="first_name" id="first_name">
 
@@ -10,12 +12,17 @@
       <input type="text" placeholder="Enter Last Name" [(ngModel)]="last_name" name="last_name" id="last_name">
 
       <label for="country"><b>Country</b></label>
-      <select name="country" [(ngModel)]="country">
+      <select name="country" [(ngModel)]="country" [style]="'width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #f1f1f1;'">
+        <option value = ''>Select</option>
         <option *ngFor="let country of countryData" value="{{country.id}}">
           {{country.name}}
         </option>
       </select>
-      <!-- <input type="text" placeholder="Enter Country" [(ngModel)]="country" name="country" id="country"> -->
 
       <label for="organization"><b>Organization</b></label>
       <input type="text" [(ngModel)]="organization" name="organization" id="organization">
@@ -34,7 +41,7 @@
   
     <div class="container signin">
       <!-- <p>Already have an account? <a [routerLink] = "['/organiser/resgister']">Sign in</a>.</p> -->
-      <p>Already have an account? <a [routerLink] = "['/organiser/register']">Sign in</a>.</p>
+      <p>Already have an account? <a [routerLink] = "['/organiser/login']">Sign in</a>.</p>
     </div>
     
   </form>

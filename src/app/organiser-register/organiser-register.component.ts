@@ -3,6 +3,7 @@ import { ValidateService } from '../validate.service';
 import { AuthService } from '../services/auth.service';
 import { CommonService } from '../services/common.service';
 import { Country } from '../models/Country';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-organiser-register',
@@ -19,17 +20,17 @@ export class OrganiserRegisterComponent implements OnInit {
   organization : String = ''
   country : String = ''
   countryData: Country[] = []
+  isRegistered : boolean = false
+  messageString : String = ''
 
-  constructor (private ValidateService: ValidateService, private AuthService: AuthService, private CommonService: CommonService) {}
+  constructor (private ValidateService: ValidateService, private AuthService: AuthService, private CommonService: CommonService, private Router: Router) {}
 
 
   ngOnInit(): void{
     
     this.CommonService.getCountry().subscribe(countries => {
-      
       this.countryData = countries
     })
-    console.log(this.countryData)
   }
 
   
@@ -50,8 +51,15 @@ export class OrganiserRegisterComponent implements OnInit {
       alert('please fill all the feilds')
       return false;
     }
-    this.AuthService.registerOrganiser(formData).subscribe((res) => {
+    this.AuthService.registerOrganiser(formData).subscribe(res => {
       console.log(res)
+      this.isRegistered = true;
+      this.messageString = 'Registered Sucessfuly you can login with your crendtials'
+      this.Router.navigate(['organiser/register'])
+    },
+    error => {
+      this.messageString = 'Something went worng please try again'
+      this.Router.navigate(['organiser/register'])
     })
     // console.log('register action')
   }

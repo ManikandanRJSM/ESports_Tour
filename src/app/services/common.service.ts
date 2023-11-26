@@ -12,6 +12,10 @@ export class CommonService {
 
 
   getCountry(): Observable<Country[]> {
-    return this.http.get<Country[]>('http://localhost:8000/api/getCountries')
+    let headers = new HttpHeaders()
+    headers.append('Access-Control-Allow-Origin', 'http://localhost:8000')
+    headers.append('Access-Control-Allow-Credentials', 'true')
+    headers.append('Content-Type', 'application/json')
+    return this.http.get<Country[]>('http://localhost:8000/api/getCountries', {headers : headers})
   }
 }
