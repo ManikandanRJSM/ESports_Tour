@@ -28,4 +28,15 @@ export class AuthService {
 
     return this.http.post('http://localhost:8000/api/organiser/login', formData, {headers : headers})
   }
+
+  storeUserAuth(authData: any){
+    localStorage.clear()
+    localStorage.setItem('token', authData.access_token)
+    localStorage.setItem('authUser', authData.user)
+    localStorage.setItem('u_type', authData.user.u_type)
+  }
+
+  logoutUser(){
+    
+  }
 }

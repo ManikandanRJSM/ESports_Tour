@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   title = 'ESports Tour'
+  token = localStorage.getItem('token');
+  u_type = localStorage.getItem('u_type');
+  
 }

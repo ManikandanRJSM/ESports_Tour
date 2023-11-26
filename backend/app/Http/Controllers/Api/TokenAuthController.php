@@ -66,4 +66,9 @@ class TokenAuthController extends Controller{
             ]
         ]);
     }
+
+    public function logout(Request $request){
+        auth('api')->logout();
+        return response()->json(['message' => 'User successfully signed out']);
+    }
 }

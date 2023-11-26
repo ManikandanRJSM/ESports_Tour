@@ -22,8 +22,12 @@ const appRoutes: Routes = [
   {path : 'games', component : GamesComponent},
   {path : 'organiser/register', component : OrganiserRegisterComponent},
   {path : 'organiser/login', component : OrganiserLoginComponent},
+  {path : 'organiser/dashboard', component : OrganiserDashboardComponent},
+
   {path : 'player/login', component : PlayerLoginComponent},
   {path : 'player/register', component : PlayerRegisterComponent},
+  {path : 'player/dashboard', component : PlayerDashboardComponent},
+  
 ];
 
 @NgModule({

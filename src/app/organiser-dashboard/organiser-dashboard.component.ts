@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './organiser-dashboard.component.css'
 })
 export class OrganiserDashboardComponent {
-
+  constructor(){}
 }

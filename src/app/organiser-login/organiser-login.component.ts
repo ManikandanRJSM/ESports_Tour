@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ValidateService } from '../validate.service';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-organiser-login',
@@ -14,7 +15,7 @@ export class OrganiserLoginComponent {
   user_type: String = 'organiser';
   userAuthData: any;
 
-  constructor (private ValidateService: ValidateService, private AuthService: AuthService) { }
+  constructor (private ValidateService: ValidateService, private AuthService: AuthService, private Router: Router) { }
 
 
   onLoginSubmit(): any{
@@ -30,8 +31,8 @@ export class OrganiserLoginComponent {
     // console.log(this.email)
 
     this.AuthService.loginOrganiser(formData).subscribe(res =>{
-      console.log(res) 
-      // this.userAuthData = res
+      this.AuthService.storeUserAuth(res)
+      this.Router.navigate([`${this.user_type}/dashboard`])
     },error => {
       alert('Invalid Credentials.');
     })

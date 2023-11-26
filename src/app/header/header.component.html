@@ -1,9 +1,9 @@
 <div class="header">
     <a [routerLink] = "['/']" class="logo">{{title}}</a>
     <div class="header-right">
-      <a routerLinkActive="active" [routerLink] = "['games']">Play</a>
-      <a routerLinkActive="active" [routerLink] = "['/organiser/login']">Organise</a>
-      <a routerLinkActive="active" [routerLink] = "['/player/login']">Login</a>
-      
+      <a *ngIf= "!token" routerLinkActive="active" [routerLink] = "['games']">Play</a>
+      <a *ngIf= "!token" routerLinkActive="active" [routerLink] = "['/organiser/login']">Organise</a>
+      <a *ngIf= "!token" routerLinkActive="active" [routerLink] = "['/player/login']">Login</a>
+      <a *ngIf= "token" class="active" [routerLink] = "['/player/login']">Logout</a>
     </div>
   </div>
