@@ -1,8 +1,9 @@
 <div class="wrapper">
     <div *ngFor="let game of gameData" class="product">
-      <img src="{{game.g_image}}" alt="">
-      <h4 class="product-name">{{game.name}}</h4>
-      
+        <div class="game_data" (click)="gameDetails(game.g_id)">
+            <img src="{{game.g_image}}" alt="">
+            <h4 class="product-name">{{game.name}}</h4>
+        </div>
     </div>
     
   </div>

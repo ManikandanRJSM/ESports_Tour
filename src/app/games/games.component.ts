@@ -20,4 +20,9 @@ export class GamesComponent implements OnInit {
     })
   }
 
+
+  gameDetails(g_id: Number){
+    console.log(g_id)
+  }
+
 }
